@@ -33,14 +33,14 @@ export default function Profile() {
         .catch(error => {
             setError(error.message);
             console.error('Error fetching profile data:', error);
-            navigate('/signin')
+            navigate('/login')
         });
     }, [navigate])
 
-    // Redirect to signin if not authenticated
+    // Redirect to login if not authenticated
     useEffect(() => {
         if (!loading && (email === '' || userName === '')) {
-            navigate('/signin');
+            navigate('/login');
         }
     }, [loading, email, userName, navigate]);
 
@@ -48,10 +48,11 @@ export default function Profile() {
     async function handleLogout() {
         await fetch('http://localhost:5050/logout', {
             method: 'GET',
-            credentials: 'include', // Include credentials to handle cookies
+            credentials: 'include', 
         })
         .then(res => {
-            navigate('/') // Redirect to home after successful logout
+            sessionStorage.clear();
+            navigate('/'); // Redirect to home after successful logout
         })
         .catch(err => console.error(err));
     }
@@ -71,7 +72,7 @@ export default function Profile() {
                 Welcome {userName}!
             </div>
             <div>
-                <a onClick={handleLogout} className='p-3 rounded-2xl bg-red-600'>Logout</a>
+                <a onClick={handleLogout} className='p-3 rounded-2xl bg-red-600 hover:cursor-pointer'>Logout</a>
             </div>
         </div>
     )
