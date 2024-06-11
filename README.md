@@ -13,7 +13,7 @@ A template for building full-stack web applications using the MERN stack.
 8. [Contact](#contact)
 
 ## Introduction
-This template provides a starting point for developing full-stack web applications with `React.js`.  Think of it as an empty canvas with all the tools built in for you to start your own project. It includes user authentication with `passport-local` and sets up a client-server architecture where React.js is used for the frontend, built with Vite, and `Node.js` with `Express` and `MongoDB` for the backend. The backend is inspired by the 100Devs [[binary-upload-boom](https://github.com/100devs/binary-upload-boom)] template, featuring enhanced error handling tailored for separate client and server folders, and a modern development workflow.
+This template provides a starting point for developing full-stack web applications with `React.js` & `TailwindCSS`.  Think of it as an empty canvas with all the tools built in for you to start your own project. It includes user authentication with `passport-local` and sets up a client-server architecture where React.js is used for the frontend, built with Vite, and `Node.js` with `Express` and `MongoDB` for the backend. The backend is inspired by the 100Devs [[binary-upload-boom](https://github.com/100devs/binary-upload-boom)] template, featuring enhanced error handling tailored for separate client and server folders, and a modern development workflow.
 
 ## Features
 - User authentication
