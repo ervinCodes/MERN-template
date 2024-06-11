@@ -117,6 +117,6 @@ Contributions are welcome! I'm not perfect, and this app is not perfect. There a
 ## Contact
 For any inquiries, feel free to reach out:
 
-- Email: [ervincodes@gmail.com](mailto:ervincodes@gmail.com)
+- LinkedIn: [ervindev](https://www.linkedin.com/in/ervindev/)
 - GitHub: [ervinCodes](https://github.com/ervinCodes)
 - Twitter: [@ervin_dev](https://x.com/ervin_dev)
