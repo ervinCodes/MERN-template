@@ -2,7 +2,7 @@
 
 A template for building full-stack web applications using the MERN stack. 
 
-Live site can be found here: [mern-template][https://mern-template-six.vercel.app/]
+Live site can be found here: [mern-template](https://mern-template-six.vercel.app/)
 
 ## Table of Contents
 1. [Introduction](#introduction)
