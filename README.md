@@ -2,15 +2,22 @@
 
 A template for building full-stack web applications using the MERN stack. 
 
+Live site can be found here: [mern-template][https://mern-template-six.vercel.app/]
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Setup](#setup)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
 5. [Environment Variables](#environment-variables)
 6. [Running Locally](#running-locally)
-7. [Contributing](#contributing)
-8. [Contact](#contact)
+7. [Deploying Live](#deploying-live)
+   - [Hosting Server Side on Render](#hosting-server-side-on-render)
+   - [Hosting Client Side on Vercel](#hosting-client-side-on-vercel)
+8. [Contributing](#contributing)
+9. [Contact](#contact)
 
 ## Introduction
 This template provides a starting point for developing full-stack web applications with `React.js` & `TailwindCSS`.  Think of it as an empty canvas with all the tools built in for you to start your own project. It includes user authentication with `passport-local` and sets up a client-server architecture where React.js is used for the frontend, built with Vite, and `Node.js` with `Express` and `MongoDB` for the backend. The backend is inspired by the 100Devs [[binary-upload-boom](https://github.com/100devs/binary-upload-boom)] template, featuring enhanced error handling tailored for separate client and server folders, and a modern development workflow.
@@ -31,6 +38,12 @@ This template provides a starting point for developing full-stack web applicatio
 
 
 ## Setup
+
+### Prerequisites
+- Node.js installed
+- MongoDB installed or a MongoDB Atlas account
+- Vercel account
+- Render.com account
 
 ### Installation
 1. Clone the repository into your preferred folder:
@@ -76,9 +89,6 @@ API_SECRET = [your Cloudinary API secret]
 
 ## Running Locally
 
-### Prerequisites
-Ensure you have Node.js installed. If not, refer to their [website](https://nodejs.org/).
-
 ### Running
 1. You should have the split terminal still open with one on the `/client` directory and the other in the `/server` directory.
 2. In the client directory, start the frontend:
@@ -91,6 +101,35 @@ Ensure you have Node.js installed. If not, refer to their [website](https://node
     ```
 
 Open two tabs in your browser to access the client and server and ensure they are communicating properly.
+
+## Deploying Live
+
+For hosting live, I like to use [Vercel](https://vercel.com/) to host the client & [Render.com](https://render.com/) to host the server. If you wish to do the same with your project follow these steps:
+
+### Hosting Server Side on Render
+
+1. **Login to Render**: Got to [Render.com](https://render.com/) and log in or sign up.
+2. **New Web Service**: Click on 'New' and then 'Web Service'.
+3. **Select Repository**: Connect your GitHub repository and select your project.
+4. **Root Directory**: Set the root directory to 'server'.
+5. **Environment Variables**: Add your environment variables from your `.env` server file to the Render service settings.
+6. **Build Command**: Use the build command: `npm install`
+7. **Start Command**: Use the start command: `npm start`
+8. **Deploy**: Click 'Create Web Service' to deploy your server side.
+
+### Hosting Client Side on Vercel
+
+1. **Login** to Vercel: Go to [Vercel](https://vercel.com/) and log in or sign up.
+2. **New Project**: Click on 'New Project' and import your GitHub repository.
+3. **Configure Project**: Select your repository and configure your project settings.
+4. **Environment Variables**: Add your environment variables from `.env.production` to the Vercel project settings. (Make sure you add the URL to your Render site to this file so your client can listen properly in production)
+5. **Deploy**: Click 'Deploy' to deploy your client side.
+
+
+### Note
+
+You'll noticed I have a `.env.development` & `.env.production` file.  This makes it easy for you to work on the development site while ensuring the production site works as well.  Vercel will automatically know to use the production URL instead of the development.  
+
 
 ## Contributing
 Contributions are welcome! I'm not perfect, and this app is not perfect. There are a ton of ways to refactor the code and other ways to go about fetching information. If you catch any mistakes or if you'd like to make some changes to it let me know or you can help contribute to it! Follow these steps to contribute:

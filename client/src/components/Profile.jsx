@@ -1,6 +1,8 @@
 import  React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const appUrl = process.env.REACT_APP_API_URL
+
 export default function Profile() {
     let navigate = useNavigate()
 
@@ -13,7 +15,7 @@ export default function Profile() {
 
     // fetches data from the server with credentials and retrieves username and email
     useEffect(() => {
-        fetch('http://localhost:5050/profile', {
+        fetch(`${appUrl}/profile`, {
             credentials: 'include', // Ensures cookies are sent with the request
         })
         .then(res => {
@@ -46,7 +48,7 @@ export default function Profile() {
 
     // Logout
     async function handleLogout() {
-        await fetch('http://localhost:5050/logout', {
+        await fetch(`${appUrl}/logout`, {
             method: 'GET',
             credentials: 'include', 
         })

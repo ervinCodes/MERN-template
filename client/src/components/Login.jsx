@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const appUrl = process.env.REACT_APP_API_URL
+
 export default function Login() {
   let navigate = useNavigate();
 
@@ -19,7 +21,7 @@ export default function Login() {
     if(email === '' || password === '') {
       temp.push('Fields cannot be empty.')
     } else {
-      fetch('http://localhost:5050/login', {
+      fetch(`${appUrl}/login`, {
         method: 'POST',
         body: JSON.stringify({
           email: email,

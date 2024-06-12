@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import  { useNavigate } from 'react-router-dom';
 
-
+const appUrl = process.env.REACT_APP_API_URL
 
 const Signup = () => {
     // States for registration
@@ -35,7 +35,7 @@ const Signup = () => {
             setSubmitted(true);
             setErrors([]);
 
-            fetch('http://localhost:5050/signup', {
+            fetch(`${appUrl}/signup`, {
                 method: 'POST',
                 body: JSON.stringify({
                     email: email,
