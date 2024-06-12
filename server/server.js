@@ -18,11 +18,24 @@ require("./config/passport")(passport);
 // Connect To Database
 connectDB();
 
-//cors
-app.use(cors( {
-    origin: 'http://localhost:5173',
-    credentials: true,
-}))
+// Allow CORS for multiple origins
+const allowedOrigins = [
+    'http://localhost:5173', // Your local development URL
+    'https://mern-template-six.vercel.app' // Replace with your Vercel deployment URL
+]
+
+const corsOptions = {
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true
+  };
+
+app.use(cors(corsOptions));
 
 // Body Parsing
 app.use(express.urlencoded({ extended: true }));
