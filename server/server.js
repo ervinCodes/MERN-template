@@ -59,6 +59,11 @@ app.use(
     })
 );
 
+app.use((req, res, next) => {
+  console.log('Session Cookies', req.cookies);
+  next();
+})
+
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());

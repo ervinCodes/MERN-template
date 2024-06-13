@@ -33,6 +33,8 @@ exports.postLogin = (req, res, next) => {
             if (err) {
                 return res.status(500).json({ message: 'Server error during login.' })
             }
+            // Log headers
+            console.log('Response Headers:', res.getHeaders());
             res.status(200).json({ user: { userName: user.userName, email: user.email }}) // If successful, return the user details as a JSON response
         });
     })(req, res, next);
