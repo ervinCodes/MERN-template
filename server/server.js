@@ -25,15 +25,17 @@ const allowedOrigins = [
 ];
 
 const corsOptions = {
-    origin: function (origin, callback) {
+  origin: function (origin, callback) {
+      console.log('Origin:', origin); // Add this line to debug the origin
       if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
+          callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'));
+          console.log('Not allowed by CORS:', origin); // Add this line to debug rejected origins
+          callback(new Error('Not allowed by CORS'));
       }
-    },
-    credentials: true
-  };
+  },
+  credentials: true
+};
 
 app.use(cors(corsOptions));
 
