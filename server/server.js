@@ -21,7 +21,7 @@ connectDB();
 // Allow CORS for multiple origins
 const allowedOrigins = [
     'http://localhost:5173', // Your local development URL
-    'https://mern-template-six.vercel.app' // Replace with your Vercel deployment URL
+    'https://mern-template-client.onrender.com' // Replace with your Vercel deployment URL
 ];
 
 const corsOptions = {
@@ -57,7 +57,7 @@ app.use(
             httpOnly: false,
             secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
             maxAge: 24 * 60 * 60 * 1000, // 1 day
-            sameSite: 'none' // Adjust SameSite based on environment
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // Adjust SameSite based on environment
         }
     })
 );
