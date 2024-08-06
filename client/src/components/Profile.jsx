@@ -2,6 +2,7 @@ import  React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const appUrl = import.meta.env.VITE_APP_API_URL
+console.log(appUrl)
 
 export default function Profile() {
     let navigate = useNavigate()

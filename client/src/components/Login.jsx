@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const appUrl = import.meta.env.VITE_APP_API_URL
-
 console.log(appUrl)
+
+// appUrl = http://localhost:5050/
 
 export default function Login() {
   let navigate = useNavigate();
@@ -32,7 +33,7 @@ export default function Login() {
         headers: {
           'Content-type': 'application/json',
         },
-        credentials: 'include' // Ensures cookies are sent with the request 
+        credentials: 'include', // Ensures cookies are sent with the request 
       })
       .then(res => {
         if(res.ok) {
