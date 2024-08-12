@@ -55,7 +55,7 @@ app.use(
         saveUninitialized: false,
         store: new MongoStore({ mongooseConnection: mongoose.connection }),
         cookie: {
-            sameSite: none,
+            sameSite: 'none',
             secure: true,
         }
     })
