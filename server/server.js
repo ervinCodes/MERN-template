@@ -22,7 +22,7 @@ connectDB();
 const allowedOrigins = [
     'http://localhost:5173', // Your local development URL
     'https://mern-template-rt27.onrender.com', // Replace with your Vercel deployment URL
-    'https://mern-template-six.vercel.app'
+    'https://mern-template-client.onrender.com'
 ];
 
 const corsOptions = {
